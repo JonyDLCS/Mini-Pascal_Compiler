@@ -1,0 +1,69 @@
+INCLUDE macros.mac
+DOSSEG
+.MODEL SMALL
+STACK 100h
+.DATA
+	System.Linq.Enumerable+<ConcatIterator>d__59`1[System.Char]	System.Linq.Enumerable+<ConcatIterator>d__59`1[System.Char]	System.Linq.Enumerable+<ConcatIterator>d__59`1[System.Char]D0:
+	T0 DB 0
+	T1 DB 0
+	T2 DB 0
+A3:
+B4:
+	T3 DB 0
+D5:
+	T4 DB 0
+	T5 DB 0
+	T6 DB 0
+C6:
+A2:
+B7:
+C1:
+	T7 DB 0
+A8:
+B9:
+.CODE
+.386
+BEGIN:
+	MOV AX, @DATA
+	MOV DS, AX
+	CALL COMPI
+	MOV AX, 4C00H
+	INT 21H
+COMPI PROC
+	READ
+	READ
+	I_MAYORIGUAL a, 100, T0
+	JF T0, C1:
+	WRITECADENA cadena
+	I_MENOR a, 20, T1
+	JF T1, A2:
+	WRITECADENA cadena
+	I_MENORIGUAL a, 0, T2
+	JF T2, A3:
+	I_ASIGNAR 250, 
+	JMP B4:
+	WRITE a, 
+	SUMAR a, 1, T3
+	I_ASIGNAR T3, 
+	I_MAYOR a, 0, T4
+	JF T4, C6:
+	SUMAR sum, a, T5
+	I_ASIGNAR T5, 
+	RESTA a, 2, T6
+	I_ASIGNAR T6, 
+	JMP D5:
+	WRITE sum, 
+	JMP B7:
+	WRITECADENA cadena
+	WRITE a, 
+	WRITECADENA cadena
+	JMP D0:
+	I_ASIGNAR 1000, 
+	I_MENORIGUAL a, 0, T7
+	JF T7, A8:
+	I_ASIGNAR 250, 
+	JMP B9:
+	WRITE a, 
+	I_ASIGNAR 10, 
+COMPI ENDP
+END BEGIN
